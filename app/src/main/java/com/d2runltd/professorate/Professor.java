@@ -1,7 +1,5 @@
 package com.d2runltd.professorate;
 
-import java.util.ArrayList;
-
 public class Professor
 {
 	private String id;
@@ -11,15 +9,15 @@ public class Professor
 
 	private String link;
 
-	private ArrayList<Rating> ratings;
+	private String imageLink;
 
-	public Professor(String id, String name, String dept, String link, ArrayList<Rating> ratings)
+	public Professor(String id, String name, String dept, String link, String imageLink)
 	{
 		this.id = id;
 		this.name = name;
 		this.dept = dept;
 		this.link = link;
-		this.ratings = ratings;
+		this.imageLink = imageLink;
 	}
 
 	public Professor()
@@ -65,13 +63,13 @@ public class Professor
 		this.link = link;
 	}
 
-	public ArrayList<Rating> getRatings()
+	public String getImageLink()
 	{
-		return ratings;
+		return imageLink;
 	}
 
-	public void setRatings(ArrayList<Rating> ratings)
+	public void setImageLink(String imageLink)
 	{
-		this.ratings = ratings;
+		this.imageLink = imageLink;
 	}
 }

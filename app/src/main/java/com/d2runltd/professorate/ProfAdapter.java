@@ -7,7 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfAdapter extends RecyclerView.Adapter<ProfAdapter.ViewHolder>
 {
@@ -24,6 +28,7 @@ public class ProfAdapter extends RecyclerView.Adapter<ProfAdapter.ViewHolder>
 	{
 		public TextView name;
 		TextView dept;
+		CircleImageView photo;
 
 		ViewHolder(View itemView)
 		{
@@ -31,6 +36,7 @@ public class ProfAdapter extends RecyclerView.Adapter<ProfAdapter.ViewHolder>
 
 			name = itemView.findViewById(R.id.p_name);
 			dept = itemView.findViewById(R.id.p_dept);
+			photo = itemView.findViewById(R.id.p_photo);
 		}
 	}
 
@@ -50,6 +56,11 @@ public class ProfAdapter extends RecyclerView.Adapter<ProfAdapter.ViewHolder>
 
 		holder.name.setText(prof.getName());
 		holder.dept.setText(prof.getDept());
+
+		if(!prof.getImageLink().equals(""))
+			Picasso.with(context).load(prof.getImageLink()).into(holder.photo);
+		else
+			holder.photo.setImageResource(R.drawable.default_prof_image);
 	}
 
 	@Override

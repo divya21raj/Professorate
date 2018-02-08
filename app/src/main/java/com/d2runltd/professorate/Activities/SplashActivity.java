@@ -75,9 +75,4 @@ public class SplashActivity extends AppCompatActivity
 	{
 		return profList;
 	}
-
-	public void setProfList(ArrayList<Professor> profList)
-	{
-		profList = profList;
-	}
 }
